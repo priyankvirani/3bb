@@ -78,11 +78,11 @@ class _HomePageState extends State<HomePage> {
         actions: [IconButton(onPressed: () {
           var json = jsonEncode(_controller?.document.toDelta().toJson());
           if(titleController.text.trim().isEmpty){
-            Scaffold.of(context).showSnackBar( new SnackBar(content: new Text("Enter Title")));
+            Scaffold.of(context).showSnackBar( const SnackBar(content: Text("Enter Title")));
           }else{
             saveToStorage(json,context);
           }
-        }, icon: Icon(Icons.save))],
+        }, icon: const Icon(Icons.save))],
       ),
       body: RawKeyboardListener(
         focusNode: FocusNode(),
